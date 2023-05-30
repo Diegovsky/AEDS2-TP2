@@ -62,7 +62,13 @@ void time_execution(int argc, char* argv[], FuncaoOrdenacao f) {
 
     Item* arr;
     printf("N: %ld\n"
-           "Runs:\n", n);
+           "Size: "
+           #ifdef BIG_REG
+           "big"
+           #else
+           "small"
+           #endif
+           "\nRuns:\n", n);
     for(int i = 0; i < 10; i++) {
         switch (order) {
             case 0:

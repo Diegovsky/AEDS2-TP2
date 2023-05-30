@@ -67,6 +67,8 @@ void mergesort(Item arr[], int l, int r, long* num_comp, long* num_swap)
     }
 }
 
+// Para ser chamada pela função time_execution, que exige um formato específico
+// de argumentos
 void mergesort_(Item* array, int n, long* num_cmp, long* num_swap) {
     mergesort(array, 0, n - 1, num_cmp, num_swap);
 }

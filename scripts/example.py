@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import sys
+import os
 import yaml
 import numpy as np
 import matplotlib.pyplot as plt
@@ -84,10 +85,11 @@ def savegraph(plt, sort, attr):
 
 
 def genimages(algo):
+    scale = os.getenv('SCALE', 'log')
     for sort in ['rand', 'cres', 'decres']:
         for attr in ['time', 'swap', 'cmp']:
             try:
-                plt = makeplot(f'{sort}_report.txt', attr, algo, 'log')
+                plt = makeplot(f'{sort}_report.txt', attr, algo, scale)
                 savegraph(plt, sort, attr)
 
             except ValueError:

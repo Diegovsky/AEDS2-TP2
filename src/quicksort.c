@@ -30,6 +30,8 @@ void quicksort(Item* array, int low, int high, long* num_cmp, long* num_swap) {
     }
 }
 
+// Para ser chamada pela função time_execution, que exige um formato específico
+// de argumentos
 void quicksort_(Item* array, int n, long* num_cmp, long* num_swap) {
     quicksort(array, 0, n - 1, num_cmp, num_swap);
 }
