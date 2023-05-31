@@ -1,0 +1,20 @@
+# Sistema operacional utilizado
+Arch Linux
+
+# Como compilar
+Você precisará dos pacotes meson e ninja.
+
+# Instruções de compilação
+Escola um nome para a pasta em que os arquivos vão ficar salvos. No exemplo a seguir, escolhi o nome "build":
+```bash
+meson setup build
+ninja -C build
+```
+
+# Como executar
+Após a compilação, vários arquivos serão criados na pasta `build/src` com o nome dos respectivos algoritmos. Para executar algum, basta o chamar da seguinte forma no terminal: `<algoritmo> <numero de elementos> <forma de ordenaçãdo vetor inicial>`.
+
+Por exemplo, para executar o mergesort com 5000 elementos iniciais aleatórios: `build/src/insertionsort 5000 rand`
+
+# Como executar todas as combinações de uma vez
+Para simplificar as coisas, fiz um script que executa todas as combinações especificadas (salvo pelo quicksort, que demora muito no seu pior caso) chamado `runner.sh`. Ele se encontra na pasta `script/`. Para rodar os testes utilizando o insertionsort, por exemplo, basta executar `scripts/runner.sh build/src/insertionsort` na pasta do projeto. O mesmo se segue para os demais algoritmos. Uma pasta `data` será criada com os dados coletados.

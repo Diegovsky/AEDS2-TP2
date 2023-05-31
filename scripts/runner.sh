@@ -25,7 +25,7 @@ for mode in rand cres decres; do
     pushd $mode
     report=../"$mode"_report.txt
     echo '' > $report
-    for N in 20 500 5000 10000 200000; do
+    for N in 20 500 5000 10000 2000000; do
         if [[ $foldername == quicksort ]] && [[ $N -eq 200000 ]] && [[ $mode != rand ]]; then
             continue
         fi
